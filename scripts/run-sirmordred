@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cat /sirmordred-setup.cfg > /home/grimoire/conf/setup.cfg
+cat /sirmordred-override.cfg >> /home/grimoire/conf/setup.cfg
+
+${DEPLOY_USER_DIR}/stage
