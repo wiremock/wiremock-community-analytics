@@ -4,44 +4,34 @@
         "title": "WireMock"
       },
       "git": [
-          "https://github.com/wiremock/wiremock.git",
-          "https://github.com/wiremock/wiremock.org.git",
           "https://github.com/wiremock/wiremock-docker.git",
           "https://github.com/wiremock/wiremock-testcontainers-java.git"
       ],
       "github": [
-        "https://github.com/wiremock/wiremock",
-        "https://github.com/wiremock/wiremock.org",
         "https://github.com/wiremock/wiremock-docker",
         "https://github.com/wiremock/wiremock-testcontainers-java"
       ],
       "github:repo": [
-        "https://github.com/wiremock/wiremock",
-        "https://github.com/wiremock/wiremock.org",
         "https://github.com/wiremock/wiremock-docker",
         "https://github.com/wiremock/wiremock-testcontainers-java"
       ],
       "github:issue": [
-        "https://github.com/wiremock/wiremock",
-        "https://github.com/wiremock/wiremock.org",
         "https://github.com/wiremock/wiremock-docker",
         "https://github.com/wiremock/wiremock-testcontainers-java"
       ],
       "github:pull": [
-        "https://github.com/wiremock/wiremock",
-        "https://github.com/wiremock/wiremock.org",
+        "https://github.com/wiremock/wiremock-docker",
+        "https://github.com/wiremock/wiremock-testcontainers-java"
+      ],
+      "githubql": [
         "https://github.com/wiremock/wiremock-docker",
         "https://github.com/wiremock/wiremock-testcontainers-java"
       ],
       "github2:issue": [
-        "https://github.com/wiremock/wiremock",
-        "https://github.com/wiremock/wiremock.org",
         "https://github.com/wiremock/wiremock-docker",
         "https://github.com/wiremock/wiremock-testcontainers-java"
       ],
       "github2:pull": [
-        "https://github.com/wiremock/wiremock",
-        "https://github.com/wiremock/wiremock.org",
         "https://github.com/wiremock/wiremock-docker",
         "https://github.com/wiremock/wiremock-testcontainers-java"
       ]

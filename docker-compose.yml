@@ -46,6 +46,7 @@ services:
       image: grimoirelab/grimoirelab:latest
       volumes:
         - ./settings/setup.cfg:/home/grimoire/conf/setup.cfg
+        - ./settings/credentials.cfg:/home/grimoire/conf/credentials.cfg
         - ./settings/projects.json:/home/grimoire/conf/projects.json
         - /tmp/:/home/grimoire/logs
       depends_on:
