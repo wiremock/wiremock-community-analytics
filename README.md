@@ -2,12 +2,13 @@
 
 WireMock community analytics setup, based on [GrimoireLab](https://chaoss.github.io/grimoirelab/)
 by CHAOSS.
-The project is distr
+The project is distributed as Docker Compose, and can be reused as needed.
 
 ## Configured analytics
 
 - git
-- github:repo, github:issues, github:pulls
+- github, github:repo, github:issues, github:pulls
+- githubql
 - github2:issues, github2:pulls
 
 ## Running locally
