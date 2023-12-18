@@ -49,7 +49,6 @@ services:
         dockerfile: grimoirelab.Dockerfile
       volumes:
         - ./settings/setup.cfg:/sirmordred-setup.cfg
-        - ./settings/credentials.cfg:/sirmordred-override.cfg
         - ./settings/projects.json:/home/grimoire/conf/projects.json
         - /tmp/:/home/grimoire/logs
       depends_on:
@@ -59,7 +58,7 @@ services:
 
     sortinghat:
       restart: on-failure:3
-      image: grimoirelab/sortinghat
+      image: grimoirelab/sortinghat:0.17.0
       environment:
         - SORTINGHAT_SECRET_KEY=secret
         - SORTINGHAT_DB_HOST=mariadb
@@ -84,7 +83,7 @@ services:
           condition: service_healthy
 
     sortinghat_worker:
-      image: grimoirelab/sortinghat-worker
+      image: grimoirelab/sortinghat-worker:0.17.0
       environment:
         - SORTINGHAT_SECRET_KEY=secret
         - SORTINGHAT_DB_HOST=mariadb
