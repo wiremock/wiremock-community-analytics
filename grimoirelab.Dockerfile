@@ -1,6 +1,6 @@
 FROM grimoirelab/grimoirelab:0.18.0
 
 COPY settings/credentials.cfg /sirmordred-override.cfg
-COPY scripts/run-sirmordred ${DEPLOY_USER_DIR}/run-custom
+COPY scripts/run-sirmordred /sirmordred-run
 
-CMD ${DEPLOY_USER_DIR}/run-custom
+CMD /sirmordred-run
