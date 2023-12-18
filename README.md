@@ -16,7 +16,7 @@ The project is distributed as Docker Compose, and can be reused as needed.
 1. Check out this repository
 2. Take `settings/credentials.cfg.template` and create local `settings/credentials.cfg`
    by replacing stubs with a proper token
-3. In `settings/projects.json` put an actual list of projects
+3. OPTIONAL: Run `./scripts/generate-projects-json` to generate or refresh the projects configuration file
 4. Run `docker compose up`
 
 ## TODOs

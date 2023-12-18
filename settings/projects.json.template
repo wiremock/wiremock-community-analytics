@@ -1,31 +1,31 @@
 {
-    "wiremock": {
-      "meta": {
-        "title": "WireMock"
-      },
-      "git": [
-        ${GIT_REPOS}
-      ],
-      "github": [
-        ${GITHUB_REPOS}
-      ],
-      "github:repo": [
-        ${GITHUB_REPOS}
-      ],
-      "github:issue": [
-        ${GITHUB_REPOS}
-      ],
-      "github:pull": [
-        ${GITHUB_REPOS}
-      ],
-      "githubql": [
-        ${GITHUB_REPOS}
-      ],
-      "github2:issue": [
-        ${GITHUB_REPOS}
-      ],
-      "github2:pull": [
-        ${GITHUB_REPOS}
-      ]
-    }
+  "wiremock": {
+    "meta": {
+      "title": "WireMock"
+    },
+    "git": [
+      ${GIT_REPOS}
+    ],
+    "github": [
+      ${GITHUB_REPOS}
+    ],
+    "github:repo": [
+      ${GITHUB_REPOS}
+    ],
+    "github:issue": [
+      ${GITHUB_REPOS}
+    ],
+    "github:pull": [
+      ${GITHUB_REPOS}
+    ],
+    "githubql": [
+      ${GITHUB_REPOS}
+    ],
+    "github2:issue": [
+      ${GITHUB_REPOS}
+    ],
+    "github2:pull": [
+      ${GITHUB_REPOS}
+    ]
   }
+}

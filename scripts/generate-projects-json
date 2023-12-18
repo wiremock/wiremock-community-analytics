@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -e
 set -x
 
 function join_array {
@@ -22,16 +21,13 @@ repoUrls=()
 gitUrls=()
 for repo in "${repositories[@]}"
 do
-  repoUrl="https://github.com/wiremock/${repo//[[:blank:]]/}"
-  repoUrls+=${repoUrl}
-  gitUrls+="${repoUrl}.git"
-  echo "FOO: ${repoUrl}"
+  repoUrl="https://github.com/wiremock/${repo//[$'\t\r\n ']/}"
+  repoUrls+="\"${repoUrl}\" "
+  gitUrls+="\"${repoUrl}.git\" "
 done
 
-git_repos=$(join_array ",\n        " ${gitUrls[@]})
-github_repos=$(join_array ",\n        " ${repoUrls[@]})
+git_repos=$(join_array ",\n      " ${gitUrls[@]})
+github_repos=$(join_array ",\n      " ${repoUrls[@]})
 
-awk -v r="$git_repos" '{gsub(/\${GIT_REPOS}/,r)}1' settings/projects.json.template > settings/projects.json
-# awk -v r="$git_repos" '{gsub(/\${GITHUB_REPOS}/,r)}1' settings/projects.json> settings/projects.json
-
+awk -v git="$git_repos" -v github="$github_repos" '{gsub(/\${GIT_REPOS}/,git); gsub(/\${GITHUB_REPOS}/,github)}2' settings/projects.json.template > settings/projects.json
 
