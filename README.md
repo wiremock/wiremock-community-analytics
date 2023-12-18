@@ -18,11 +18,16 @@ The project is distributed as Docker Compose, and can be reused as needed.
    by replacing stubs with a proper token
 3. OPTIONAL: Run `./scripts/generate-projects-json` to generate or refresh the projects configuration file
 4. Run `docker compose up`
+5. Wait...
+   The production configuration includes many repositories,
+   and it may take a while until GrimoireLab loads all the data.
+   Normally it takes about 10 minutes
 
-## TODOs
+## Wishlist
 
-- [ ] `settings/projects.json` management is PITA, a generator script is needed
 - [ ] Sorting Hat can be initialized with the organizations
+- [ ] Nice2Have: Support for the application tokens
+- [ ] Non-GitHub analytics OOTB
 
 ## License
 
