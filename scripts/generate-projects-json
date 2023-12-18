@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -e
+set -x
+
+function join_array {
+  local delimiter=${1-}
+  local values=${2-}
+  
+  if shift 2; then
+    printf %s $values "${@/#/$delimiter}"
+  fi
+}
+
+readarray repositories < <(curl -L   \
+    -H "Accept: application/vnd.github+json" \
+    -H "X-GitHub-Api-Version: 2022-11-28" \
+    https://api.github.com/orgs/wiremock/repos?per_page=100 \
+    | jq --raw-output '.[].name')
+
+repoUrls=()
+gitUrls=()
+for repo in "${repositories[@]}"
+do
+  repoUrl="https://github.com/wiremock/${repo//[[:blank:]]/}"
+  repoUrls+=${repoUrl}
+  gitUrls+="${repoUrl}.git"
+  echo "FOO: ${repoUrl}"
+done
+
+git_repos=$(join_array ",\n        " ${gitUrls[@]})
+github_repos=$(join_array ",\n        " ${repoUrls[@]})
+
+awk -v r="$git_repos" '{gsub(/\${GIT_REPOS}/,r)}1' settings/projects.json.template > settings/projects.json
+# awk -v r="$git_repos" '{gsub(/\${GITHUB_REPOS}/,r)}1' settings/projects.json> settings/projects.json
+
+
