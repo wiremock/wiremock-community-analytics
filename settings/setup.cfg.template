@@ -81,6 +81,7 @@ enriched_index = github_wiremock
 # Sleep it GitHub API rate is exhausted, waited until it is recovered
 sleep-for-rate = true
 no-archive = true
+api-token = ${GITHUB_TOKEN}
 
 [github:repo]
 raw_index = github-repo_raw
@@ -89,6 +90,7 @@ category = repository
 sleep-for-rate = true
 no-archive = true
 studies = [enrich_demography:github]
+api-token = ${GITHUB_TOKEN}
 
 [github:pull]
 raw_index = github-pull_raw
@@ -99,6 +101,7 @@ no-archive = true
 studies = [enrich_geolocation:user,
            enrich_geolocation:assignee,
            enrich_demography:github]
+api-token = ${GITHUB_TOKEN}
 
 [github:issue]
 raw_index = github_raw
@@ -111,6 +114,7 @@ studies = [enrich_onion:github,
            enrich_geolocation:assignee,
            enrich_backlog_analysis,
            enrich_demography:github]
+api-token = ${GITHUB_TOKEN}
 
 [githubql]
 raw_index = github_event_raw
@@ -119,6 +123,7 @@ sleep-for-rate = true
 sleep-time = "300"
 no-archive = true
 studies = [enrich_duration_analysis:kanban, enrich_reference_analysis]
+api-token = ${GITHUB_TOKEN}
 
 [enrich_duration_analysis:kanban]
 start_event_type = MovedColumnsInProjectEvent
@@ -172,6 +177,7 @@ sleep-for-rate = true
 category = pull_request
 no-archive = true
 studies = [enrich_geolocation:user, enrich_geolocation:assignee, enrich_feelings]
+api-token = ${GITHUB_TOKEN}
 
 [github2:issue]
 raw_index = github2-issues_raw
@@ -180,8 +186,7 @@ sleep-for-rate = true
 category = issue
 no-archive = true
 studies = [enrich_geolocation:user, enrich_geolocation:assignee, enrich_feelings]
-
-
+api-token = ${GITHUB_TOKEN}
 
 #[stackexchange]
 #raw_index = stackexchange_demo_raw

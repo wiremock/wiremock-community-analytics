@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cat /sirmordred-setup.cfg > /home/grimoire/conf/setup.cfg
-cat /sirmordred-override.cfg >> /home/grimoire/conf/setup.cfg
+GITHUB_API_TOKERN=$(cat /run/secrets/github-api-token)
+awk -v token="$GITHUB_API_TOKEN" '{gsub(/\${GITHUB_TOKEN}/,token)}1' \
+    /sirmordred-setup.cfg.template > /home/grimoire/conf/setup.cfg
 
 ${DEPLOY_USER_DIR}/stage

@@ -48,13 +48,15 @@ services:
         context: .
         dockerfile: grimoirelab.Dockerfile
       volumes:
-        - ./settings/setup.cfg:/sirmordred-setup.cfg
+        - ./settings/setup.cfg.template:/sirmordred-setup.cfg.template
         - ./settings/projects.json:/home/grimoire/conf/projects.json
         - /tmp/:/home/grimoire/logs
       depends_on:
         nginx:
           condition: service_healthy
       mem_limit: 4g
+      secrets:
+        - github-api-token
 
     sortinghat:
       restart: on-failure:3
@@ -118,3 +120,7 @@ services:
 
 volumes:
   sortinghat-static:
+
+secrets:
+  github-api-token:
+    file: ./settings/api-token.txt
