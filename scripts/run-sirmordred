@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITHUB_API_TOKERN=$(cat /run/secrets/github-api-token)
+GITHUB_API_TOKEN=$(cat /run/secrets/github-api-token)
 awk -v token="$GITHUB_API_TOKEN" '{gsub(/\${GITHUB_TOKEN}/,token)}1' \
     /sirmordred-setup.cfg.template > /home/grimoire/conf/setup.cfg
 
