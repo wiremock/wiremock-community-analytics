@@ -11,6 +11,8 @@ services:
       healthcheck:
         test: [ "CMD", "/usr/local/bin/healthcheck.sh", "--su=root", "--connect", "--innodb_initialized" ]
         retries: 5
+      volumes:
+        - mariadb-data:/var/lib/mysql
 
     redis:
       image: redis:latest
@@ -19,6 +21,8 @@ services:
       healthcheck:
         test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
         retries: 5
+      volumes:
+        - redis-data:/data
 
     elasticsearch:
       image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6
@@ -28,6 +32,8 @@ services:
       environment:
         - ES_JAVA_OPTS=-Xms2g -Xmx2g
         - ANONYMOUS_USER=true
+      volumes:
+        - elastic-data:/usr/share/elasticsearch/data
 
     kibiter:
       restart: on-failure:5
@@ -120,6 +126,9 @@ services:
 
 volumes:
   sortinghat-static:
+  mariadb-data:
+  redis-data:
+  elastic-data:
 
 secrets:
   github-api-token:
