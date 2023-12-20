@@ -2,6 +2,7 @@ version: '2.2'
 
 services:
     mariadb:
+      restart: always
       image: mariadb:10.6
       expose:
         - "3306"
@@ -15,6 +16,7 @@ services:
         - mariadb-data:/var/lib/mysql
 
     redis:
+      restart: always
       image: redis:latest
       expose:
         - "6379"
@@ -25,6 +27,7 @@ services:
         - redis-data:/data
 
     elasticsearch:
+      restart: always
       image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.6
       command: elasticsearch -Enetwork.bind_host=0.0.0.0 -Ehttp.max_content_length=2000mb
       ports:
@@ -36,7 +39,7 @@ services:
         - elastic-data:/usr/share/elasticsearch/data
 
     kibiter:
-      restart: on-failure:5
+      restart: always
       image: bitergia/kibiter:community-v6.8.6-3
       environment:
         - PROJECT_NAME=Demo
@@ -48,7 +51,7 @@ services:
         - 5601:5601
 
     mordred:
-      restart: on-failure:5
+      restart: always
       image: wiremock/grimoirelab:latest
       build:
         context: .
@@ -65,7 +68,7 @@ services:
         - github-api-token
 
     sortinghat:
-      restart: on-failure:3
+      restart: always
       image: grimoirelab/sortinghat:0.17.0
       environment:
         - SORTINGHAT_SECRET_KEY=secret
@@ -91,6 +94,7 @@ services:
           condition: service_healthy
 
     sortinghat_worker:
+      restart: always
       image: grimoirelab/sortinghat-worker:0.17.0
       environment:
         - SORTINGHAT_SECRET_KEY=secret
@@ -108,7 +112,7 @@ services:
           condition: service_healthy
 
     nginx:
-      restart: on-failure:3
+      restart: always
       image: nginx:latest
       volumes:
         - ./settings/nginx.conf.template:/etc/nginx/templates/default.conf.template
