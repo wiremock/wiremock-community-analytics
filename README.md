@@ -14,7 +14,7 @@ The project is distributed as Docker Compose, and can be reused as needed.
 ## Running locally
 
 1. Check out this repository
-2. Put the GitHub token in the `settings/api-token.txt`.
+2. Create the file `settings/api-token.txt` containing only your GitHub token.
    It will be propagated as a Docker secret to the `mordred` instance
 3. OPTIONAL: Run `./scripts/generate-projects-json` to generate or refresh the projects configuration file
 4. Run `docker compose up`
