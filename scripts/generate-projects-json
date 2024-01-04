@@ -19,7 +19,7 @@ readarray repositories < <(curl -L   \
     | jq --raw-output '.[].name')
 
 if [ -n "${USE_TEST_DATA}" ]; then
-  repositories=("https://github.com/wiremock/grpc-wiremock" "https://github.com/wiremock/wiremock-testcontainers-java")
+  repositories=("grpc-wiremock" "wiremock-testcontainers-java")
 fi
 
 echo "${repositories[@]}" > settings/projects.lock
