@@ -25,11 +25,14 @@ The project is distributed as Docker Compose, and can be reused as needed.
    and it may take a while until GrimoireLab loads all the data.
    Normally it takes about 10 minutes
 
+The service will be exposed on the port `80` by default.
+
 ## Wishlist
 
 - [ ] Sorting Hat can be initialized with the organizations
 - [ ] Nice2Have: Support for the application tokens
 - [ ] Non-GitHub analytics OOTB
+- [ ] Actually consume the `menu.yaml` file
 
 ## License
 
