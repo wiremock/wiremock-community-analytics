@@ -24,6 +24,8 @@ autoprofile = [github, git]
 unaffiliated_group = Unknown
 load_orgs=true
 orgs_file=/home/grimoirelab/settings/orgs_file.json
+strict_mapping = false
+reset_on_load = false
 host = nginx
 user = root
 password = root
@@ -31,7 +33,7 @@ port = 8000
 path = /identities/api/
 ssl = false
 database = sortinghat_db
-matching = [email,name,username]
+matching = [email, username]
 sleep_for = 100
 identities_api_token = ${GITHUB_TOKEN}
 
