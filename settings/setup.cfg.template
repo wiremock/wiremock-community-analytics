@@ -62,7 +62,9 @@ panels = true
 raw_index = git_raw
 enriched_index = git_enriched
 latest-items = true
-studies = [enrich_demography:git, enrich_areas_of_code:git, enrich_onion:git]
+studies = [enrich_demography, enrich_demography:git, enrich_areas_of_code:git, enrich_onion:git]
+
+[enrich_demography]
 
 [enrich_demography:git]
 
@@ -122,8 +124,8 @@ studies = [enrich_onion:github,
 api-token = ${GITHUB_TOKEN}
 
 [githubql]
-raw_index = github_event_raw
-enriched_index = github_event_enriched
+raw_index = github-event_raw
+enriched_index = github-event_enriched
 sleep-for-rate = true
 sleep-time = "300"
 no-archive = true
@@ -181,8 +183,8 @@ studies = [enrich_geolocation:user, enrich_geolocation:assignee]
 api-token = ${GITHUB_TOKEN}
 
 [github2:issue]
-raw_index = github2-issues_raw
-enriched_index = github2-issues_enriched
+raw_index = github2-issue_raw
+enriched_index = github2-issue_enriched
 sleep-for-rate = true
 category = issue
 no-archive = true
