@@ -27,12 +27,21 @@ The project is distributed as Docker Compose, and can be reused as needed.
 
 The service will be exposed on the port `80` by default.
 
+## Editing organization mappings
+
+The setup pre-configures [SortingHat](https://chaoss.github.io/grimoirelab-tutorial/sortinghat)
+by the list of known organizations,
+originally sourced from [here](https://github.com/chaoss/grimoirelab-hatstall/blob/master/docker/orgs_file.json).
+This list is dated and for sure not complete.
+
+You can add organizations from your community to [settings/orgs_file.json](settings/orgs_file.json).
+
 ## Wishlist
 
-- [ ] Sorting Hat can be initialized with the organizations
-- [ ] Nice2Have: Support for the application tokens
+- [ ] Nice2Have: Support for the application tokens. Now the menu is hardcoded.
 - [ ] Non-GitHub analytics OOTB
 - [ ] Actually consume the `menu.yaml` file
+- [ ] Include the NLP sentiment server to the setup to do comments/impressions
 
 ## License
 

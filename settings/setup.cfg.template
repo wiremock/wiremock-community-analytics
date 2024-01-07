@@ -19,6 +19,11 @@ url = http://elasticsearch:9200
 autorefresh = true
 
 [sortinghat]
+affiliate = true
+autoprofile = [github, git]
+unaffiliated_group = Unknown
+load_orgs=true
+orgs_file=/home/grimoirelab/settings/orgs_file.json
 host = nginx
 user = root
 password = root
@@ -26,11 +31,9 @@ port = 8000
 path = /identities/api/
 ssl = false
 database = sortinghat_db
-autoprofile = [github, git]
 matching = [email,name,username]
 sleep_for = 100
-unaffiliated_group = Unknown
-affiliate = true
+identities_api_token = ${GITHUB_TOKEN}
 
 [panels]
 kibiter_time_from = now-90d
@@ -161,10 +164,6 @@ geolocation_field = user_geolocation
 location_field = assignee_location
 geolocation_field = assignee_geolocation
 
-[enrich_feelings]
-attributes = [title, body]
-nlp_rest_url = http://localhost:2901
-
 ##########
 #
 # Comments
@@ -176,7 +175,7 @@ enriched_index = github2-pull_enriched
 sleep-for-rate = true
 category = pull_request
 no-archive = true
-studies = [enrich_geolocation:user, enrich_geolocation:assignee, enrich_feelings]
+studies = [enrich_geolocation:user, enrich_geolocation:assignee]
 api-token = ${GITHUB_TOKEN}
 
 [github2:issue]
@@ -185,7 +184,7 @@ enriched_index = github2-issues_enriched
 sleep-for-rate = true
 category = issue
 no-archive = true
-studies = [enrich_geolocation:user, enrich_geolocation:assignee, enrich_feelings]
+studies = [enrich_geolocation:user, enrich_geolocation:assignee]
 api-token = ${GITHUB_TOKEN}
 
 #[stackexchange]

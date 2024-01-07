@@ -87,6 +87,7 @@ services:
         - "9314"
       volumes:
         - sortinghat-static:/opt/venv/lib/python3.9/site-packages/sortinghat/static/
+        - ./settings/orgs_file.json:/home/grimoirelab/settings/orgs_file.json
       depends_on:
         mariadb:
           condition: service_healthy
@@ -110,6 +111,8 @@ services:
           condition: service_healthy
         redis:
           condition: service_healthy
+      volumes:
+        - ./settings/orgs_file.json:/home/grimoirelab/settings/orgs_file.json
 
     nginx:
       restart: always
