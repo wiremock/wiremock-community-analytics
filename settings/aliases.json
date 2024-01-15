@@ -207,6 +207,9 @@
     "enrich": [
       {
         "alias": "github_pull_requests"
+      },
+      {
+        "alias": "all_enriched"
       }
     ]
   },
@@ -219,6 +222,9 @@
     "enrich": [
       {
         "alias": "github_repositories"
+      },
+      {
+        "alias": "all_enriched"
       }
     ]
   },
