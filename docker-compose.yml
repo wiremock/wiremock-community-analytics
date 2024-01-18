@@ -139,4 +139,8 @@ volumes:
 
 secrets:
   github-api-token:
-    file: ./settings/api-token.txt
+    file: ./settings/github-api-token.txt
+  stackoverflow-api-token:
+    file: ./settings/stackoverflow-api-token.txt
+  slack-api-token:
+    file: ./settings/slack-api-token.txt

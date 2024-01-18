@@ -14,7 +14,7 @@ function join_array {
 readarray repositories < <(curl -L   \
     -H "Accept: application/vnd.github+json" \
     -H "X-GitHub-Api-Version: 2022-11-28" \
-    -H "Authorization: Bearer $(cat settings/api-token.txt)" \
+    -H "Authorization: Bearer $(cat settings/github-api-token.txt)" \
     "https://api.github.com/orgs/wiremock/repos?type=sources&per_page=100" \
     | jq --raw-output '.[].name')
 
