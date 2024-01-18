@@ -1,9 +1,8 @@
 #!/bin/bash
 
-GITHUB_API_TOKEN=$(cat /run/secrets/github-api-token)
-STACKOVERFLOW_API_TOKEN=$(cat /run/secrets/stackoverflow-api-token)
-SLACK_API_TOKEN=$(cat /run/secrets/slack-api-token)
-
+export GITHUB_API_TOKEN=$(cat /run/secrets/github-api-token)
+export STACKOVERFLOW_API_TOKEN=$(cat /run/secrets/stackoverflow-api-token)
+export SLACK_API_TOKEN=$(cat /run/secrets/slack-api-token)
 cat /sirmordred-setup.cfg.template | envsubst > /home/grimoire/conf/setup.cfg
 
 ${DEPLOY_USER_DIR}/stage
