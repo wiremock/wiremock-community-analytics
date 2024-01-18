@@ -66,6 +66,8 @@ services:
       mem_limit: 4g
       secrets:
         - github-api-token
+        - stackoverflow-api-token
+        - slack-api-token
 
     sortinghat:
       restart: always
