@@ -338,6 +338,18 @@
       "https://github.com/wiremock/wiremock-payments-demo-app",
       "https://github.com/wiremock/gradle-wiremock-extension-plugins",
       "https://github.com/wiremock/wiremock-quarkus-devservice-demo"
+    ],
+
+    "slack": [
+      "C03NAEH5LVA",
+      "C03N1E6HFPY",
+      "C053Y3N34C8",
+      "C04HURRF8RZ"
+    ],
+
+    "stackexchange": [
+      "http://stackoverflow.com/questions/tagged/wiremock",
+      "http://stackoverflow.com/questions/tagged/wiremock-standalone"
     ]
   }
 }
